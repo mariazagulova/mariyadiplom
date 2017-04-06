@@ -1,0 +1,2 @@
+Name: Striatum [D2], Title: Raster plot from device '580', Hist: False
+ 26.2 :    1 : [111]

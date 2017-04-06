@@ -1,0 +1,3 @@
+Name: Striatum [tan], Title: Raster plot from device '582', Hist: False
+ 23.7 :    1 : [136]
+416.0 :    1 : [135]

@@ -1,0 +1,2 @@
+Name: Striatum [tan], Title: Raster plot from device '713', Hist: False
+415.5 :    1 : [412]

@@ -44,9 +44,9 @@ nts_a1, nts_a2 = range(2)
 #ventral
 
 ldt = ({k_name: 'LDT [A1]'},
-       {k_name: 'LDT [A2]'}
+       {k_name: 'LDT [A2]'},
        {k_name: 'LDT [Ach]'})
-LDT_a1, LDT_a2, LDT_ach = range(3)
+ldt_a1, ldt_a2, ldt_Ach = range(3)
 
 
 bnst = ({k_name: 'Bed nucleus of the stria terminalis [GABA]'},
@@ -54,12 +54,11 @@ bnst = ({k_name: 'Bed nucleus of the stria terminalis [GABA]'},
 	{k_name: 'Bed nucleus of the stria terminalis [Ach]'})
 bnst_GABA, bnst_Glu, bnst_Ach = range(3)
 
-thalamus = ({k_name: 'Thalamus [Glu]'},
-        {k_name: 'Thalamus [Ach]'})
-thalamus_Glu, thalamus_Ach = range(2)
+thalamus = ({k_name: 'Thalamus [Glu]'}, )
+thalamus_Glu = 0
 
-pvn = ({k_name: 'Paraventicular nucleus'})
-paraventicular_nucleus = 0
+pvn = ({k_name: 'Paraventicular nucleus'}, )
+pvn_n = 0
 
 motor = ({k_name: 'Motor cortex [Glu0]'},
          {k_name: 'Motor cortex [Glu1]'})
@@ -67,8 +66,8 @@ motor_Glu0, motor_Glu1 = range(2)
 
 
 amygdala = ({k_name: 'Amygdala [Glu]'},
-	k_name: 'Amygdala [Ach]'},
-	k_name: 'Amygdala [GABA]'}, )
+	{k_name: 'Amygdala [Ach]'},
+	{k_name: 'Amygdala [GABA]'})
 amygdala_Glu,amygdala_Ach,amygdala_GABA  = range(3)
 
 #dorsal
@@ -79,14 +78,14 @@ vta = ({k_name: 'VTA [Da0]'},
        {k_name: 'VTA [GABA1]'},
        {k_name: 'VTA [GABA2]'},
        {k_name: 'VTA [a1]'})
-vta_Da0, vta_Da1, vta_GABA0, vta_GABA1, vta_GABA2, vta_a1 = range(6)
+vta_D0, vta_D1, vta_GABA0, vta_GABA1, vta_GABA2, vta_a1 = range(6)
 
 
 pgi = ({k_name: 'Nucleus paragigantocellularis lateralis [GABA]'},
 	{k_name: 'Nucleus paragigantocellularis lateralis [Glu]'})
 pgi_GABA, pgi_Glu = range(2)
 
-prefrontal = ({k_name: 'Prefrontal cortex [Glu]'})
+prefrontal = ({k_name: 'Prefrontal cortex [Glu]'}, )
 pfc_Glu = 0
 
 rn = ({k_name: 'RN [a1]'},
@@ -144,19 +143,17 @@ nts[nts_a2][k_NN] = 30
 
 #ventral numbers
 
-ldt[LDT_Ach][k_NN] = 30
-ldt[LDT_a1][k_NN] = 30
-ldt[LDT_a2][k_NN] = 30
-pvn[paraventicular_nucleus][k_NN] = 20
+ldt[ldt_Ach][k_NN] = 30
+ldt[ldt_a1][k_NN] = 30
+ldt[ldt_a2][k_NN] = 30
+pvn[pvn_n][k_NN] = 30
 motor[motor_Glu0][k_NN] = 40
 motor[motor_Glu1][k_NN] = 40
-motor[motor_cortex][k_NN] = 40
 
 bnst[bnst_GABA][k_NN] = 30
 bnst[bnst_Glu][k_NN] = 30
 bnst[bnst_Ach][k_NN] = 30
-thalamus[thalamus_Glu][k_NN] = 30 #!!!!
-thalamus[thalamus_Ach][k_NN] = 30
+thalamus[thalamus_Glu][k_NN] = 30
 amygdala[amygdala_Glu][k_NN] = 30
 amygdala[amygdala_GABA][k_NN] = 30
 amygdala[amygdala_Ach][k_NN] = 30
@@ -165,9 +162,9 @@ amygdala[amygdala_Ach][k_NN] = 30
 
 vta[vta_a1][k_NN] = 30
 vta[vta_GABA0][k_NN] = 50
-vta[vta_DA0][k_NN] = 30
+vta[vta_D0][k_NN] = 30
 vta[vta_GABA1][k_NN] = 50
-vta[vta_DA1][k_NN] = 30
+vta[vta_D1][k_NN] = 30
 vta[vta_GABA2][k_NN] = 50
 
 pgi[pgi_GABA][k_NN] = 30
@@ -179,7 +176,7 @@ prefrontal[pfc_Glu][k_NN] = 40
 striatum[D1][k_NN] = 30
 striatum[D2][k_NN] = 30
 striatum[tan][k_NN] = 30
-prh[prh_GABA][k_NN]  30
+prh[prh_GABA][k_NN] = 30
 
 #dopa numbers
 

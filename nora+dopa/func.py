@@ -48,9 +48,8 @@ def generate_neurons(nn):
 
 ##################################dopa###############
 
-    parts_no_dopa = gpe + gpi + stn + (amygdala[Glu], amygdala + (vta[vta_GABA0], vta[vta_GABA1], vta[vta_GABA2], snc[snc_GABA]) + \
-                    striatum + motor + prefrontal + nac + pptg + thalamus + snr
-    parts_with_dopa = (vta[vta_DA0], vta[vta_DA1], snc[snc_DA])
+    parts_no_dopa = gpe + gpi + stn + amygdala + vta + striatum + motor + prefrontal + nac + pptg + thalamus + snr
+    parts_with_dopa = snc
 
 ##################################dopa###############
 

@@ -130,7 +130,7 @@ pptg_GABA, pptg_ACh, pptg_Glu = range(3)
 
 
 #nora numbers
-
+"""
 lc[lc_D1][k_NN] = 30
 lc[lc_D2][k_NN] = 30
 lc[lc_N0][k_NN] = 30
@@ -177,6 +177,71 @@ striatum[D1][k_NN] = 30
 striatum[D2][k_NN] = 30
 striatum[tan][k_NN] = 30
 prh[prh_GABA][k_NN] = 30
+
+#dopa numbers
+
+gpe[gpe_GABA][k_NN] = 40
+gpi[gpi_GABA][k_NN] = 30
+stn[stn_Glu][k_NN] = 20
+snc[snc_GABA][k_NN] = 30              #TODO check number of neurons
+snc[snc_DA][k_NN] = 30              #TODO check number of neurons
+snr[snr_GABA][k_NN] = 40
+nac[nac_ACh][k_NN] = 50               #TODO not real!!!
+nac[nac_GABA0][k_NN] = 30            #TODO not real!!!
+nac[nac_GABA1][k_NN] = 30            #TODO not real!!!
+pptg[pptg_GABA][k_NN] = 30
+pptg[pptg_ACh][k_NN] = 30
+pptg[pptg_Glu][k_NN] = 30
+"""
+
+
+lc[lc_D1][k_NN] = 500
+lc[lc_D2][k_NN] = 500
+lc[lc_N0][k_NN] = 1750
+lc[lc_N1][k_NN] = 1750
+lc[lc_Ach][k_NN] = 500
+lc[lc_GABA][k_NN] = 400
+
+nts[nts_a1][k_NN] = 3500
+nts[nts_a2][k_NN] = 1300
+
+#ventral numbers
+
+ldt[ldt_Ach][k_NN] = 1811
+ldt[ldt_a1][k_NN] = 1800
+ldt[ldt_a2][k_NN] = 1800
+pvn[pvn_n][k_NN] = 1000
+motor_cortex_NN = 5000 #actually 5000000
+motor[motor_Glu0][k_NN] = motor_cortex_NN * 0.8
+motor[motor_Glu1][k_NN] = motor_cortex_NN * 0.2
+
+bnst[bnst_GABA][k_NN] = 12000
+bnst[bnst_Glu][k_NN] = 31500
+bnst[bnst_Ach][k_NN] = 2200
+thalamus[thalamus_Glu][k_NN] = 1000 #actually 1000000
+amygdala[amygdala_Glu][k_NN] = 30000
+amygdala[amygdala_GABA][k_NN] = 14250
+amygdala[amygdala_Ach][k_NN] = 6632
+
+#dorsal numbers
+
+vta[vta_a1][k_NN] = 20000
+vta[vta_GABA0][k_NN] = 20000
+vta[vta_D0][k_NN] = 20000
+vta[vta_GABA1][k_NN] = 20000
+vta[vta_D1][k_NN] = 20000
+vta[vta_GABA2][k_NN] = 20000
+
+pgi[pgi_GABA][k_NN] = 15000
+pgi[pgi_Glu][k_NN] = 15000
+
+rn[rn_a1][k_NN] = 2900
+rn[rn_a2][k_NN] = 2900
+prefrontal[pfc_Glu][k_NN] = 40
+striatum[D1][k_NN] = 1500
+striatum[D2][k_NN] = 1500
+striatum[tan][k_NN] = 14250
+prh[prh_GABA][k_NN] = 3627
 
 #dopa numbers
 

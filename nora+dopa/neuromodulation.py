@@ -106,7 +106,7 @@ if noradrenaline_flag:
 
     add_connection(vta[vta_a1], vta[vta_D1], syn_type=NA_in, weight_coef=0.005)
    
-
+"""
 # * * * NIGROSTRIATAL PATHWAY* * *
 add_connection(motor[motor_Glu0], striatum[D1], syn_type=Glu, weight_coef=0.005)
 add_connection(motor[motor_Glu0], snc[snc_DA], syn_type=Glu, weight_coef=0.005)
@@ -119,8 +119,8 @@ add_connection(motor[motor_Glu1], thalamus[thalamus_Glu], syn_type=Glu, weight_c
 add_connection(motor[motor_Glu1], stn[stn_Glu], syn_type=Glu, weight_coef=0.005)
 add_connection(motor[motor_Glu1], nac[nac_GABA0], syn_type=GABA, weight_coef=0.005)
 
-add_connection(striatum[tan], striatum[D1], syn_type=GABA, weight_coef=0.005)
-add_connection(striatum[tan], striatum[D2], syn_type=Glu, weight_coef=0.005)
+#add_connection(striatum[tan], striatum[D1], syn_type=GABA, weight_coef=0.005)
+#add_connection(striatum[tan], striatum[D2], syn_type=Glu, weight_coef=0.005)
 
 add_connection(striatum[D1], snr[snr_GABA],syn_type=GABA, weight_coef=0.001)
 add_connection(striatum[D1], gpi[gpi_GABA],syn_type=GABA, weight_coef=0.001)
@@ -128,8 +128,8 @@ add_connection(striatum[D1], gpe[gpe_GABA],syn_type=GABA, weight_coef=0.005)
 add_connection(striatum[D2], gpe[gpe_GABA],syn_type=GABA, weight_coef=1)
 
 add_connection(gpe[gpe_GABA], stn[stn_Glu],syn_type=GABA, weight_coef=0.001)
-add_connection(gpe[gpe_GABA], striatum[D1],syn_type=GABA, weight_coef=0.001)
-add_connection(gpe[gpe_GABA], striatum[D2],syn_type=GABA, weight_coef=0.3)
+#add_connection(gpe[gpe_GABA], striatum[D1],syn_type=GABA, weight_coef=0.001)
+#add_connection(gpe[gpe_GABA], striatum[D2],syn_type=GABA, weight_coef=0.3)
 add_connection(snc[snc_DA], gpe[gpe_GABA], weight_coef=0.3, syn_type=DA_ex)
 add_connection(amygdala[amygdala_Glu], gpe[gpe_GABA], syn_type=Glu, weight_coef=0.3)
 add_connection(gpe[gpe_GABA], amygdala[amygdala_Glu], syn_type=GABA, weight_coef=0.1)
@@ -152,7 +152,9 @@ add_connection(thalamus[thalamus_Glu], striatum[tan], syn_type=Glu, weight_coef=
 add_connection(thalamus[thalamus_Glu], nac[nac_GABA0], syn_type=Glu)
 add_connection(thalamus[thalamus_Glu], nac[nac_GABA1], syn_type=Glu)
 add_connection(thalamus[thalamus_Glu], nac[nac_ACh], syn_type=Glu)
+"""
 
+"""
 # * * * MESOCORTICOLIMBIC PATHWAY * * *
 add_connection(nac[nac_ACh], nac[nac_GABA1], syn_type=ACh)
 add_connection(nac[nac_GABA0], nac[nac_GABA1],syn_type=GABA,)
@@ -173,7 +175,10 @@ add_connection(pptg[pptg_Glu], vta[vta_D1], syn_type=Glu)
 add_connection(pptg[pptg_ACh], striatum[D1], syn_type=ACh, weight_coef=0.3)
 add_connection(pptg[pptg_ACh], snc[snc_GABA], syn_type=ACh, weight_coef=0.005)
 add_connection(pptg[pptg_Glu], snc[snc_DA], syn_type=Glu, weight_coef=0.005)
+"""
 
+
+"""
 # * * * INTEGRATED PATHWAY * * *
 add_connection(prefrontal[pfc_Glu], vta[vta_D0], syn_type=Glu)
 add_connection(prefrontal[pfc_Glu], nac[nac_GABA1], syn_type=Glu)
@@ -186,7 +191,8 @@ add_connection(amygdala[amygdala_Glu], nac[nac_ACh], syn_type=Glu)
 add_connection(amygdala[amygdala_Glu], striatum[D1], syn_type=Glu, weight_coef=0.3)
 add_connection(amygdala[amygdala_Glu], striatum[D2], syn_type=Glu, weight_coef=0.3)
 add_connection(amygdala[amygdala_Glu], striatum[tan], syn_type=Glu, weight_coef=0.3)
-
+"""
+"""
 if dopamine_flag:
     logger.debug("* * * Making neuromodulating connections...")
     # NIGROSTRIATAL
@@ -196,17 +202,17 @@ if dopamine_flag:
     add_connection(snc[snc_DA], stn[stn_Glu], syn_type=DA_ex)
     add_connection(snc[snc_DA], nac[nac_GABA0], syn_type=DA_ex)
     add_connection(snc[snc_DA], nac[nac_GABA1], syn_type=DA_ex)
-    add_connection(snc[snc_DA], striatum[D2], syn_type=DA_in)
-    add_connection(snc[snc_DA], striatum[tan], syn_type=DA_in)
+    #add_connection(snc[snc_DA], striatum[D2], syn_type=DA_in)
+    #add_connection(snc[snc_DA], striatum[tan], syn_type=DA_in)
 
     # MESOCORTICOLIMBIC
     add_connection(vta[vta_D0], striatum[D1], syn_type=DA_ex)
-    add_connection(vta[vta_D0], striatum[D2], syn_type=DA_in)
+    #add_connection(vta[vta_D0], striatum[D2], syn_type=DA_in)
     add_connection(vta[vta_D0], prefrontal[pfc_Glu], syn_type=DA_ex)
     add_connection(vta[vta_D0], prefrontal[pfc_Glu], syn_type=DA_ex)
     add_connection(vta[vta_D1], nac[nac_GABA0], syn_type=DA_ex)
     add_connection(vta[vta_D1], nac[nac_GABA1], syn_type=DA_ex)
-
+"""
 ###########################dopa#########################
 
 
@@ -217,23 +223,24 @@ connect_all()
 logger.debug("* * * Attaching spike generators...")
 if generator_flag:
 
-    connect_generator(nts[nts_a1], 100., 500., rate=100, coef_part=1)
-    connect_generator(nts[nts_a2], 100., 500., rate=100, coef_part=1)
-    connect_generator(prh[prh_GABA], 100., 500., rate=100, coef_part=1)
-    connect_generator(pgi[pgi_GABA], 100., 500., rate=100, coef_part=1)
-    connect_generator(pgi[pgi_Glu], 100., 500., rate=100, coef_part=1)
-    connect_generator(ldt[ldt_a1], 100., 500., rate=100, coef_part=1)
-    connect_generator(ldt[ldt_a2], 100., 500., rate=100, coef_part=1)
-    connect_generator(ldt[ldt_Ach], 100., 500., rate=100, coef_part=1)
-    
-    connect_generator(gpe[gpe_GABA], 400., 600., rate=250, coef_part=1)
-    connect_generator(pptg[pptg_GABA], 400., 600., rate=250, coef_part=1)
-    connect_generator(pptg[pptg_Glu], 400., 600., rate=250, coef_part=1)
-    connect_generator(pptg[pptg_ACh], 400., 600., rate=250, coef_part=1)
-    connect_generator(amygdala[amygdala_Glu], 400., 600., rate=250, coef_part=1)
-    connect_generator(snc[snc_DA], 400., 600., rate=250, coef_part=1)
-    connect_generator(vta[vta_D0], 400., 600., rate=250, coef_part=1)
-    connect_generator(motor[motor_Glu0], 400., 600., rate=250, coef_part=1)
+    connect_generator(nts[nts_a1], 200., 600., rate=100, coef_part=1)
+    connect_generator(nts[nts_a2], 200., 600., rate=100, coef_part=1)
+    connect_generator(prh[prh_GABA], 200., 600., rate=100, coef_part=1)
+    connect_generator(pgi[pgi_GABA], 200., 600., rate=100, coef_part=1)
+    connect_generator(pgi[pgi_Glu], 200., 600., rate=100, coef_part=1)
+    connect_generator(ldt[ldt_a1], 200., 600., rate=100, coef_part=1)
+    connect_generator(ldt[ldt_a2], 200., 600., rate=100, coef_part=1)
+    connect_generator(ldt[ldt_Ach], 200., 600., rate=100, coef_part=1)
+    connect_generator(lc[lc_N0], 200., 600., rate=100, coef_part=1)
+    connect_generator(lc[lc_N1], 200., 600., rate=100, coef_part=1)
+    #connect_generator(gpe[gpe_GABA], 400., 600., rate=250, coef_part=1)
+    #connect_generator(pptg[pptg_GABA], 400., 600., rate=250, coef_part=1)
+    #connect_generator(pptg[pptg_Glu], 400., 600., rate=250, coef_part=1)
+    #connect_generator(pptg[pptg_ACh], 400., 600., rate=250, coef_part=1)
+    #connect_generator(amygdala[amygdala_Glu], 400., 600., rate=250, coef_part=1)
+    #connect_generator(snc[snc_DA], 400., 600., rate=250, coef_part=1)
+    #connect_generator(vta[vta_D0], 400., 600., rate=250, coef_part=1)
+    #connect_generator(motor[motor_Glu0], 400., 600., rate=250, coef_part=1)
 #########dopa########
 """
     #connect_generator(gpe[gpi_GABA], rate=250, coef_part=1)

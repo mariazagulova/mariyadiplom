@@ -7,6 +7,7 @@ DA_in = 4
 NORA_ex = 5
 SERO_in = 6
 SERO_ex = 7
+NA_ex = 8
 
 # Keys for synapse models
 model = 0
@@ -60,4 +61,5 @@ gen_static_syn   = 'noise_conn'
 
 # Additional setings
 dopamine_flag = True     # dopamine modulation flag
+noradrenaline_flag = True     # noradrenaline modulation flag
 status_gui = True        # True - GUI is on | False - is off

@@ -66,7 +66,8 @@ synapses = {GABA:  (gaba_synapse,    w_GABA ),
             ACh:   (ach_synapse,     w_ACh  ),
             DA_ex: (dopa_synapse_ex, w_DA_ex),
             DA_in: (dopa_synapse_in, w_DA_in),
-            NORA_ex: (nora_synapse_ex, w_NA_ex),
+            NA_ex: (nora_synapse_ex, w_NA_ex),
+            #NORA_ex: (nora_synapse_ex, w_NA_ex),
             SERO_in: (sero_synapse_in, w_SERO_in),
             SERO_ex: (sero_synapse_ex, w_SERO_ex)
 }
@@ -79,7 +80,7 @@ static_syn = {
 
 # Device parameters
 multimeter_param = {'to_memory': True,
-                    'to_file': True,
+                    'to_file': False,
                     'withtime': True,
                     'interval': 0.1,
                     'record_from': ['V_m'],
@@ -88,6 +89,6 @@ multimeter_param = {'to_memory': True,
 detector_param = {'label': 'spikes',
                   'withtime': True,
                   'withgid': True,
-                  'to_file': True,
+                  'to_file': False,
                   'to_memory': True,
                   'scientific': True}

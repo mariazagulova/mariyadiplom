@@ -40,22 +40,22 @@ def generate_neurons(NNumber):
                     prefrontal[pfc_Glu0], prefrontal[pfc_Glu1],
                     nac[nac_ACh], nac[nac_GABA0], nac[nac_GABA1],
                     vta[vta_GABA0], vta[vta_GABA1], vta[vta_GABA2],
-                    locus_coeruleus[locus_coeruleus_NA],
-                    amygdala[amygdala_Glu],
+                    amygdala[amygdala_Glu], amygdala[amygdala_Ach], amygdala[amygdala_GABA],
                     snc[snc_GABA]) + \
         motor + pptg + snr + gpe + gpi + stn + rostral_group
 
     parts_with_dopa = (vta[vta_DA0], vta[vta_DA1], vta[vta_DA2], snc[snc_DA], nac[nac_DA],
                        striatum[striatum_DA], prefrontal[pfc_DA],
-                       locus_coeruleus[locus_coeruleus_DA],
+                       lc[lc_D1],
+                       lc[lc_D2],
                        substantia_nigra[substantia_nigra_DA])
 
     parts_with_5HT = (striatum[striatum_5HT], thalamus[thalamus_5HT], prefrontal[pfc_5HT],
                       nac[nac_5HT], vta[vta_5HT], amygdala[amygdala_5HT],
-                      locus_coeruleus[locus_coeruleus_5HT],
+                      lc[lc_5HT],
                       substantia_nigra[substantia_nigra_5HT]) + \
         medial_cortex + cerebral_cortex + neocortex + lateral_cortex + \
-        entorhinal_cortex + septum + pons + lateral_tegmental_area + bed_nucleus_of_the_stria_terminalis + \
+        entorhinal_cortex + septum + pons + lateral_tegmental_area + \
         dr + mnr + reticular_formation + periaqueductal_gray + hippocampus + hypothalamus + \
         insular_cortex + basal_ganglia + rmg + rpa
 

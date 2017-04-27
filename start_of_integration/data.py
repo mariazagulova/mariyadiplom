@@ -30,8 +30,9 @@ lc = ({k_name: 'LC [D1]'},
 	{k_name: 'LC [Ach]'},
 	{k_name: 'LC [N1]'},
 	{k_name: 'LC [N0]'},
-	{k_name: 'LC [GABA]'})
-lc_D1, lc_D2, lc_Ach, lc_N1, lc_N0, lc_GABA = range(6)
+	{k_name: 'LC [GABA]'},
+  {k_name: 'LC [5HT]'})
+lc_D1, lc_D2, lc_Ach, lc_N1, lc_N0, lc_GABA, lc_5HT = range(7)
 
 nts = ({k_name: 'NTS [A1]'},
        {k_name: 'NTS [A2]'})
@@ -42,13 +43,15 @@ nts_a1, nts_a2 = range(2)
 ldt = ({k_name: 'LDT [A1]'},
        {k_name: 'LDT [A2]'},
        {k_name: 'LDT [Ach]'})
+
 ldt_a1, ldt_a2, ldt_Ach = range(3)
 
 
 bnst = ({k_name: 'Bed nucleus of the stria terminalis [GABA]'},
 	{k_name: 'Bed nucleus of the stria terminalis [Glu]'},
+	{k_name: 'Bed nucleus of the stria terminalis [5HT]'},
 	{k_name: 'Bed nucleus of the stria terminalis [Ach]'})
-bnst_GABA, bnst_Glu, bnst_Ach = range(3)
+bnst_GABA, bnst_Glu, bnst_5HT, bnst_Ach = range(4)
 
 pvn = ({k_name: 'Paraventicular nucleus'}, )
 pvn_n = 0
@@ -58,7 +61,7 @@ amygdala = ({k_name: 'Amygdala [Glu]'},
 	{k_name: 'Amygdala [Ach]'},
 	{k_name: 'Amygdala [5HT]'},
 	{k_name: 'Amygdala [GABA]'})
-amygdala_Glu,amygdala_Ach,amygdala_5HT, amygdala_GABA  = range(4)
+amygdala_Glu, amygdala_Ach, amygdala_5HT, amygdala_GABA  = range(4)
 
 #dorsal
 
@@ -177,13 +180,11 @@ pons_5HT = 0
 lateral_tegmental_area = ({k_name: 'Lateral tegmental area [5HT]'}, )
 lateral_tegmental_area_5HT = 0
 
-locus_coeruleus = ({k_name: 'Locus coeruleus [DA]'},
-                   {k_name: 'Locus coeruleus [5HT]'},
-                   {k_name: 'Locus coeruleus [NA]'})
-locus_coeruleus_DA, locus_coeruleus_5HT, locus_coeruleus_NA = np.arange(3)
+#locus_coeruleus = ({k_name: 'Locus coeruleus [DA]'},
+#                  {k_name: 'Locus coeruleus [5HT]'},
+#                 {k_name: 'Locus coeruleus [NA]'})
+#locus_coeruleus_DA, locus_coeruleus_5HT, locus_coeruleus_NA = np.arange(3)
 
-bed_nucleus_of_the_stria_terminalis = ({k_name: 'Bed nucleus of the stria terminalis [5HT]'}, )
-bed_nucleus_of_the_stria_terminalis_5HT = 0
 
 rostral_group = ({k_name: 'Rostral group [A1]'},
                  {k_name: 'Rostral group [A2]'})
@@ -259,7 +260,7 @@ amygdala[amygdala_Glu][k_NN] = 30000    #TODO not real!!!
 # REAL NUMBER
 amygdala[amygdala_5HT][k_NN] = 3000
 basal_ganglia[basal_ganglia_5HT][k_NN] = 2593900
-bed_nucleus_of_the_stria_terminalis[bed_nucleus_of_the_stria_terminalis_5HT][k_NN] = 1000  # not real
+bnst[bnst_5HT][k_NN] = 1000  # not real
 cerebral_cortex[cerebral_cortex_5HT][k_NN] = 2593900
 dr[dr_5HT][k_NN] = 5800
 entorhinal_cortex[entorhinal_cortex_5HT][k_NN] = 635000
@@ -377,7 +378,7 @@ amygdala[amygdala_Glu][k_NN] = 30    #TODO not real!!!
 # REAL NUMBER
 amygdala[amygdala_5HT][k_NN] = 30
 basal_ganglia[basal_ganglia_5HT][k_NN] = 25
-bed_nucleus_of_the_stria_terminalis[bed_nucleus_of_the_stria_terminalis_5HT][k_NN] = 10  # not real
+bnst[bnst_5HT][k_NN] = 10  # not real
 cerebral_cortex[cerebral_cortex_5HT][k_NN] = 25
 dr[dr_5HT][k_NN] = 58
 entorhinal_cortex[entorhinal_cortex_5HT][k_NN] = 63
@@ -386,9 +387,9 @@ hypothalamus[hypothalamus_5HT][k_NN] = 10  # not real
 insular_cortex[insular_cortex_5HT][k_NN] = 10  # not real
 lateral_cortex[lateral_cortex_5HT][k_NN] = 10  # not real
 lateral_tegmental_area[lateral_tegmental_area_5HT][k_NN] = 10  # not real
-locus_coeruleus[locus_coeruleus_5HT][k_NN] = 50
-locus_coeruleus[locus_coeruleus_DA][k_NN] = 50
-locus_coeruleus[locus_coeruleus_NA][k_NN] = 50
+#locus_coeruleus[locus_coeruleus_5HT][k_NN] = 50
+#locus_coeruleus[locus_coeruleus_DA][k_NN] = 50
+#locus_coeruleus[locus_coeruleus_NA][k_NN] = 50
 medial_cortex[medial_cortex_5HT][k_NN] = 10  # not real
 mnr[mnr_5HT][k_NN] = 11
 nac[nac_5HT][k_NN] = 15
@@ -419,6 +420,7 @@ lc[lc_N0][k_NN] = 30
 lc[lc_N1][k_NN] = 30
 lc[lc_Ach][k_NN] = 30
 lc[lc_GABA][k_NN] = 30
+lc[lc_5HT][k_NN] = 30
 
 nts[nts_a1][k_NN] = 30
 nts[nts_a2][k_NN] = 30
@@ -436,7 +438,7 @@ bnst[bnst_GABA][k_NN] = 30
 bnst[bnst_Glu][k_NN] = 30
 bnst[bnst_Ach][k_NN] = 30
 thalamus[thalamus_Glu][k_NN] = 30
-amygdala[amygdala_Glu][k_NN] = 30
+
 amygdala[amygdala_GABA][k_NN] = 30
 amygdala[amygdala_Ach][k_NN] = 30
 
@@ -454,7 +456,7 @@ pgi[pgi_Glu][k_NN] = 30
 
 rn[rn_a1][k_NN] = 30
 rn[rn_a2][k_NN] = 30
-prefrontal[pfc_Glu][k_NN] = 40
+
 striatum[D1][k_NN] = 30
 striatum[D2][k_NN] = 30
 striatum[tan][k_NN] = 30

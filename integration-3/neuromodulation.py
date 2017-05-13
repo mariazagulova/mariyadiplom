@@ -255,6 +255,8 @@ if noradrenaline_flag:
 
     connect(lc[lc_N0], motor[motor_Glu0], syn_type=NA_ex, weight_coef=0.005)
     connect(lc[lc_N0], motor[motor_Glu1], syn_type=NA_ex, weight_coef=0.005)
+    connect(lc[lc_N0], dr[dr_5HT], syn_type=NA_ex, weight_coef=0.005)
+    connect(lc[lc_N1], motor[mnr_5HT], syn_type=NA_ex, weight_coef=0.005)
 
     #connect(lc[lc_N0], prefrontal[pfc_Glu], syn_type=NA_ex, weight_coef=0.005)
     connect(lc[lc_N0], vta[vta_a1], syn_type=NA_ex, weight_coef=0.005)
@@ -330,10 +332,10 @@ if dopamine_flag and serotonin_flag and noradrenaline_flag:
     connect(rostral_group[rostral_group_A2], mnr[mnr_5HT], syn_type=NA_ex, weight_coef=0.005) 
 
 
-
 logger.debug("* * * Creating spike generators...")
 
 
+#################################interest/excitemenr
 connect_generator(nts[nts_a1], 400., 600., rate=100, coef_part=1)
 connect_generator(nts[nts_a2], 400., 600., rate=100, coef_part=1)
 connect_generator(prh[prh_GABA], 400., 600., rate=100, coef_part=1)
@@ -344,36 +346,108 @@ connect_generator(ldt[ldt_a2], 400., 600., rate=100, coef_part=1)
 connect_generator(ldt[ldt_Ach], 400., 600., rate=100, coef_part=1)
 connect_generator(lc[lc_N0], 400., 600., rate=100, coef_part=1)
 connect_generator(lc[lc_N1], 400., 600., rate=100, coef_part=1)
-###########################################################
+
+connect_generator(cerebral_cortex[cerebral_cortex_5HT], 300., 600., rate=250, coef_part=1)
+connect_generator(dr[dr_5HT], 300., 600., rate=250, coef_part=1)
+connect_generator(mnr[mnr_5HT], 300., 600., rate=250, coef_part=1)
+
+connect_generator(motor[motor_Glu0], 200., 600., rate=300, coef_part=1)
+connect_generator(pptg[pptg_GABA], 200., 600., rate=250, coef_part=1)
+connect_generator(pptg[pptg_Glu], 200., 600., rate=250, coef_part=1)
+connect_generator(pptg[pptg_ACh], 200., 600., rate=250, coef_part=1)
+connect_generator(amygdala[amygdala_Glu], 200., 600., rate=250, coef_part=1)
+connect_generator(snc[snc_DA], 200., 600., rate=250, coef_part=1)
+connect_generator(vta[vta_DA0], 200., 600., rate=250, coef_part=1)
 
 
-#connect_generator(cerebral_cortex[cerebral_cortex_5HT], 10., rate=250, coef_part=1)
-"""
-connect_generator(dr[dr_5HT], 200., 300., rate=250, coef_part=1)
-connect_generator(mnr[mnr_5HT], 200., 300., rate=250, coef_part=1)
-"""
-
-
-connect_generator(motor[motor_Glu0], 400., 500., rate=300, coef_part=1)
-connect_generator(pptg[pptg_GABA], 400., 500., rate=250, coef_part=1)
-connect_generator(pptg[pptg_Glu], 400., 500., rate=250, coef_part=1)
-connect_generator(pptg[pptg_ACh], 400., 500., rate=250, coef_part=1)
-connect_generator(amygdala[amygdala_Glu], 400., 500., rate=250, coef_part=1)
-connect_generator(snc[snc_DA], 400., 500., rate=250, coef_part=1)
-connect_generator(vta[vta_DA0], 400., 500., rate=250, coef_part=1)
-"""
-connect_generator(motor[motor_Glu0], 700., 800., rate=300, coef_part=1)
-connect_generator(pptg[pptg_GABA], 700., 800., rate=250, coef_part=1)
-connect_generator(pptg[pptg_Glu], 700., 800., rate=250, coef_part=1)
-connect_generator(pptg[pptg_ACh], 700., 800., rate=250, coef_part=1)
-connect_generator(amygdala[amygdala_Glu], 700., 800., rate=250, coef_part=1)
-connect_generator(snc[snc_DA], 700., 800., rate=250, coef_part=1)
-connect_generator(vta[vta_DA0], 700., 800., rate=250, coef_part=1)
-
-connect_generator(dr[dr_5HT], 700., 800., rate=250, coef_part=1)
-connect_generator(mnr[mnr_5HT], 700., 800., rate=250, coef_part=1)
 
 """
+############################anger/rage
+connect_generator(nts[nts_a1], 400., 600., rate=100, coef_part=1)
+connect_generator(nts[nts_a2], 400., 600., rate=100, coef_part=1)
+connect_generator(prh[prh_GABA], 400., 600., rate=100, coef_part=1)
+connect_generator(pgi[pgi_GABA], 400., 600., rate=100, coef_part=1)
+connect_generator(pgi[pgi_Glu], 400., 600., rate=100, coef_part=1)
+connect_generator(ldt[ldt_a1], 400., 600., rate=100, coef_part=1)
+connect_generator(ldt[ldt_a2], 400., 600., rate=100, coef_part=1)
+connect_generator(ldt[ldt_Ach], 400., 600., rate=100, coef_part=1)
+connect_generator(lc[lc_N0], 400., 600., rate=100, coef_part=1)
+connect_generator(lc[lc_N1], 400., 600., rate=100, coef_part=1)
+
+connect_generator(motor[motor_Glu0], 200., 600., rate=300, coef_part=1)
+connect_generator(pptg[pptg_GABA], 200., 600., rate=250, coef_part=1)
+connect_generator(pptg[pptg_Glu], 200., 600., rate=250, coef_part=1)
+connect_generator(pptg[pptg_ACh], 200., 600., rate=250, coef_part=1)
+connect_generator(amygdala[amygdala_Glu], 200., 600., rate=250, coef_part=1)
+connect_generator(snc[snc_DA], 200., 600., rate=250, coef_part=1)
+connect_generator(vta[vta_DA0], 200., 600., rate=250, coef_part=1)
+"""
+
+"""
+#####################surprise
+connect_generator(nts[nts_a1], 400., 600., rate=100, coef_part=1)
+connect_generator(nts[nts_a2], 400., 600., rate=100, coef_part=1)
+connect_generator(prh[prh_GABA], 400., 600., rate=100, coef_part=1)
+connect_generator(pgi[pgi_GABA], 400., 600., rate=100, coef_part=1)
+connect_generator(pgi[pgi_Glu], 400., 600., rate=100, coef_part=1)
+connect_generator(ldt[ldt_a1], 400., 600., rate=100, coef_part=1)
+connect_generator(ldt[ldt_a2], 400., 600., rate=100, coef_part=1)
+connect_generator(ldt[ldt_Ach], 400., 600., rate=100, coef_part=1)
+connect_generator(lc[lc_N0], 400., 600., rate=100, coef_part=1)
+connect_generator(lc[lc_N1], 400., 600., rate=100, coef_part=1)
+
+connect_generator(cerebral_cortex[cerebral_cortex_5HT], 300., 600., rate=250, coef_part=1)
+connect_generator(dr[dr_5HT], 300., 600., rate=250, coef_part=1)
+connect_generator(mnr[mnr_5HT], 300., 600., rate=250, coef_part=1)
+"""
+
+"""
+######################distress/anguish
+connect_generator(nts[nts_a1], 400., 600., rate=100, coef_part=1)
+connect_generator(nts[nts_a2], 400., 600., rate=100, coef_part=1)
+connect_generator(prh[prh_GABA], 400., 600., rate=100, coef_part=1)
+connect_generator(pgi[pgi_GABA], 400., 600., rate=100, coef_part=1)
+connect_generator(pgi[pgi_Glu], 400., 600., rate=100, coef_part=1)
+connect_generator(ldt[ldt_a1], 400., 600., rate=100, coef_part=1)
+connect_generator(ldt[ldt_a2], 400., 600., rate=100, coef_part=1)
+connect_generator(ldt[ldt_Ach], 400., 600., rate=100, coef_part=1)
+connect_generator(lc[lc_N0], 400., 600., rate=100, coef_part=1)
+connect_generator(lc[lc_N1], 400., 600., rate=100, coef_part=1)
+"""
+
+"""
+##############################enjoyment/joy
+connect_generator(cerebral_cortex[cerebral_cortex_5HT], 300., 600., rate=250, coef_part=1)
+connect_generator(dr[dr_5HT], 300., 600., rate=250, coef_part=1)
+connect_generator(mnr[mnr_5HT], 300., 600., rate=250, coef_part=1)
+
+connect_generator(motor[motor_Glu0], 200., 600., rate=300, coef_part=1)
+connect_generator(pptg[pptg_GABA], 200., 600., rate=250, coef_part=1)
+connect_generator(pptg[pptg_Glu], 200., 600., rate=250, coef_part=1)
+connect_generator(pptg[pptg_ACh], 200., 600., rate=250, coef_part=1)
+connect_generator(amygdala[amygdala_Glu], 200., 600., rate=250, coef_part=1)
+connect_generator(snc[snc_DA], 200., 600., rate=250, coef_part=1)
+connect_generator(vta[vta_DA0], 200., 600., rate=250, coef_part=1)
+"""
+
+"""
+#########################contempt/disgust
+connect_generator(cerebral_cortex[cerebral_cortex_5HT], 300., 600., rate=250, coef_part=1)
+connect_generator(dr[dr_5HT], 300., 600., rate=250, coef_part=1)
+connect_generator(mnr[mnr_5HT], 300., 600., rate=250, coef_part=1)
+"""
+
+"""
+################################fear/terror
+connect_generator(motor[motor_Glu0], 200., 600., rate=300, coef_part=1)
+connect_generator(pptg[pptg_GABA], 200., 600., rate=250, coef_part=1)
+connect_generator(pptg[pptg_Glu], 200., 600., rate=250, coef_part=1)
+connect_generator(pptg[pptg_ACh], 200., 600., rate=250, coef_part=1)
+connect_generator(amygdala[amygdala_Glu], 200., 600., rate=250, coef_part=1)
+connect_generator(snc[snc_DA], 200., 600., rate=250, coef_part=1)
+connect_generator(vta[vta_DA0], 200., 600., rate=250, coef_part=1)
+"""
+
 
 ##connect_generator(pons[pons_5HT], 400., 600., rate=250, coef_part=1)
 ##connect_generator(periaqueductal_gray[periaqueductal_gray_5HT], 400., 600., rate=250, coef_part=1)

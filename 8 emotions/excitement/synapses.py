@@ -49,14 +49,28 @@ DOPA_synparams_in = dict({'delay': 1.,
                           'weight': w_DA_in,
                           'Wmax': -100.})
 
+
+# Serotonin excitatory synapse
+SERO_synparams_ex = dict({'delay': 1.,
+                          'weight': w_SERO_ex,
+                          'Wmax': 100.})
+# Serotonin inhibitory synapse
+SERO_synparams_in = dict({'delay': 1.,
+                          'weight': w_SERO_in,
+                          'Wmax': -100.})
+
+
 # Dictionary of synapses with keys and their parameters
 synapses = {GABA:  (gaba_synapse,    w_GABA ),
             Glu:   (glu_synapse,     w_Glu  ),
             ACh:   (ach_synapse,     w_ACh  ),
             NA_ex: (nora_synapse_ex, w_NA_ex),
             NA_in: (nora_synapse_in, w_NA_in),
-	DA_ex: (dopa_synapse_ex, w_DA_ex),
-            DA_in: (dopa_synapse_in, w_DA_in)
+	    DA_ex: (dopa_synapse_ex, w_DA_ex),
+            DA_in: (dopa_synapse_in, w_DA_in),
+	    SERO_ex: (sero_synapse_ex, w_SERO_ex),
+            SERO_in: (sero_synapse_in, w_SERO_in),
+
 }
 
 # Parameters for generator

@@ -48,16 +48,32 @@ def generate_neurons(nn):
 
 ##################################dopa###############
 
-    parts_no_dopa = gpe + gpi + stn + amygdala + vta + striatum + motor + prefrontal + nac + pptg + thalamus + snr
-    parts_with_dopa = snc
-
-##################################dopa###############
-
     parts_no_nora = pgi + prh + ldt + vta
-
     parts_with_nora = nts + lc + bnst + rn + pvn
-    
-    g.all_parts = tuple(sorted(parts_no_nora + parts_with_nora + parts_with_dopa + parts_no_dopa))
+
+    parts_simple = (striatum[D1], striatum[D2], striatum[tan],
+                    thalamus[thalamus_Glu],
+                    prefrontal[pfc_Glu0], prefrontal[pfc_Glu1],
+                    nac[nac_ACh], nac[nac_GABA0], nac[nac_GABA1],
+                    vta[vta_GABA0], vta[vta_GABA1], vta[vta_GABA2],
+                    amygdala[amygdala_Glu], amygdala[amygdala_Ach], amygdala[amygdala_GABA],
+                    snc[snc_GABA]) + \
+        motor + pptg + snr + gpe + gpi + stn
+
+    parts_with_dopa = (vta[vta_DA0], vta[vta_DA1], vta[vta_DA2], snc[snc_DA], nac[nac_DA],
+                       striatum[striatum_DA], prefrontal[pfc_DA],
+                       lc[lc_D1],
+                       lc[lc_D2])
+
+    parts_with_5HT = (striatum[striatum_5HT], thalamus[thalamus_5HT], prefrontal[pfc_5HT],
+                      nac[nac_5HT], vta[vta_5HT], amygdala[amygdala_5HT],
+                      lc[lc_5HT], bnst[bnst_5HT]) + \
+        medial_cortex + cerebral_cortex + neocortex + lateral_cortex + \
+        entorhinal_cortex + septum + pons + lateral_tegmental_area + \
+        dr + mnr + reticular_formation + periaqueductal_gray + hippocampus + hypothalamus + \
+        insular_cortex + basal_ganglia + rmg + rpa
+
+    g.all_parts = tuple(sorted(parts_simple + parts_with_dopa + parts_with_5HT + parts_no_nora + parts_with_nora))
 
     NN_coef = float(nn) / sum(item[k_NN] for item in g.all_parts)
 
@@ -72,11 +88,11 @@ def generate_neurons(nn):
 
 
 
-  # Parts without dopamine
-    for part in parts_no_dopa:
+  # Parts without dopamine and 5HT
+    for part in parts_simple + parts_no_nora + parts_with_nora:
         part[k_model] = 'hh_cond_exp_traub'
     # Parts with dopamine
-    for part in parts_with_dopa:
+    for part in parts_with_dopa + parts_with_5HT:
         part[k_model] = 'hh_cond_exp_traub'
     # Parts without noradrenaline
     for part in parts_no_nora:

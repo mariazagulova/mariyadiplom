@@ -40,12 +40,14 @@ w_NA_ex = 13.
 w_NA_in = -w_NA_ex
 w_DA_ex = 13.
 w_DA_in = -w_DA_ex
-
+w_SERO_ex = 13.
+w_SERO_in = -w_SERO_ex
 
 # Minimal number of neurons
 NN_minimal = 10
 
 # Additional settings
+serotonin_flag = True
 noradrenaline_flag = True     # noradrenaline modulation flag
 dopamine_flag = True    # dopamine modulation flag
 generator_flag = True

@@ -5,8 +5,10 @@ ACh = 2
 NA_ex = 3
 NA_in = 4
 
-DA_ex = 3
-DA_in = 4
+DA_ex = 5
+DA_in = 6
+SERO_ex = 7
+SERO_in = 8
 
 # Keys for synapse models
 model = 0
@@ -35,3 +37,5 @@ gen_static_syn   = 'noise_conn'
 #########dopa
 dopa_synapse_ex  = 'dopa_synapse_ex'
 dopa_synapse_in  = 'dopa_synapse_in'
+sero_synapse_ex  = 'sero_synapse_ex'
+sero_synapse_in  = 'sero_synapse_in'

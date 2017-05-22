@@ -10,7 +10,7 @@ nest.SetKernelStatus({'overwrite_files': True,
                       'local_num_threads': 8,
                       'resolution': 0.1})
 
-generate_neurons(1000)
+generate_neurons(200000)
 
 # Init parameters of our synapse models
 DOPA_synparams_ex['vt'] = nest.Create('volume_transmitter')[0]

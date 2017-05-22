@@ -42,7 +42,7 @@ def generate_neurons(NNumber):
                     vta[vta_GABA0], vta[vta_GABA1], vta[vta_GABA2],
                     amygdala[amygdala_Glu], amygdala[amygdala_Ach], amygdala[amygdala_GABA],
                     snc[snc_GABA]) + \
-        motor + pptg + snr + gpe + gpi + stn + rostral_group
+        motor + pptg + snr + gpe + gpi + stn
 
     parts_with_dopa = (vta[vta_DA0], vta[vta_DA1], vta[vta_DA2], snc[snc_DA], nac[nac_DA],
                        striatum[striatum_DA], prefrontal[pfc_DA],
@@ -59,6 +59,9 @@ def generate_neurons(NNumber):
 
     all_parts = tuple(sorted(parts_simple + parts_with_dopa + parts_with_5HT + parts_no_nora + parts_with_nora))
 
+    for item in all_parts:
+        print item[k_name]
+        print item[k_NN]
     NN_coef = float(NNumber) / sum(item[k_NN] for item in all_parts)
 
     NEURONS = sum(item[k_NN] for item in all_parts)
